@@ -2100,6 +2100,7 @@ GameObject:
   - component: {fileID: 762863540}
   - component: {fileID: 762863539}
   - component: {fileID: 762863538}
+  - component: {fileID: 762863542}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -2197,6 +2198,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &762863542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762863537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b6e329d2c73e0449a14e3bbf4b1fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &777214812
 GameObject:
   m_ObjectHideFlags: 0
@@ -4473,8 +4486,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputMovimiento: {fileID: -1432242261422544249, guid: 8750d484301d4bf47ad3e2d58cc0ed9c, type: 3}
-  direccionMovimiento2D: {x: 0, y: 0}
-  direccionMovimiento3D: {x: 0, y: 0, z: 0}
+  vectores:
+    direccionMovimiento2D: {x: 0, y: 0}
+    direccionMovimiento3D: {x: 0, y: 0, z: 0}
+    registroPosiciones: []
+  variableDeEjemplo: 
   coeficienteFuerza: 1
   rigidbody3D: {fileID: 0}
 --- !u!114 &3535411579327405616
@@ -4594,7 +4610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 810292358112230627, guid: 14be35d5b0957e4428b95ee71c1fcc76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.22
+      value: 4.211
       objectReference: {fileID: 0}
     - target: {fileID: 810292358112230627, guid: 14be35d5b0957e4428b95ee71c1fcc76, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4602,7 +4618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 810292358112230627, guid: 14be35d5b0957e4428b95ee71c1fcc76, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.39
+      value: -3.384
       objectReference: {fileID: 0}
     - target: {fileID: 810292358112230627, guid: 14be35d5b0957e4428b95ee71c1fcc76, type: 3}
       propertyPath: m_LocalRotation.w
