@@ -1,0 +1,66 @@
+{
+    "name": "ControlDemoAnimacion",
+    "maps": [
+        {
+            "name": "ControlAnimacionBasica",
+            "id": "c6760d89-7d1a-4534-a2a2-4597199d0a3b",
+            "actions": [
+                {
+                    "name": "GiraCubo",
+                    "type": "Button",
+                    "id": "1a1e3dec-fd03-4e6b-92ad-d7ed4bd6d47a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SaltaCubo",
+                    "type": "Button",
+                    "id": "cc20becd-8d13-4892-b7bb-bf4b04a3d0f6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7d7a4ea5-dc13-43c6-9bd7-5563ef0c715b",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Teclado",
+                    "action": "GiraCubo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da2aede3-9159-44e0-bc3b-e28ea00470b3",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Teclado",
+                    "action": "SaltaCubo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Teclado",
+            "bindingGroup": "Teclado",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

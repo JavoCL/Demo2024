@@ -4523,6 +4523,18 @@ MonoBehaviour:
   m_DefaultActionMap: Basicos
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3535411579327405617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532193560337217476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd40fc1e699aaa545b16e26c40197bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3775974232859266569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4668,6 +4680,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 210776834345415518, guid: 14be35d5b0957e4428b95ee71c1fcc76, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3535411579327405616}
+    - targetCorrespondingSourceObject: {fileID: 210776834345415518, guid: 14be35d5b0957e4428b95ee71c1fcc76, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3535411579327405617}
   m_SourcePrefab: {fileID: 100100000, guid: 14be35d5b0957e4428b95ee71c1fcc76, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
