@@ -1,0 +1,66 @@
+{
+    "name": "ControlesPinball",
+    "maps": [
+        {
+            "name": "BasicosPinball",
+            "id": "67506ac3-43ef-4731-a457-1afa559968af",
+            "actions": [
+                {
+                    "name": "PulsaBotonDerecha",
+                    "type": "Button",
+                    "id": "6c9fd1cf-e2eb-49d4-a088-2a109a526c66",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PulsaBotonIzquierda",
+                    "type": "Button",
+                    "id": "cb94700b-87fa-4d7f-8978-46e94f57a924",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1a50aaea-1d3b-4706-b2f6-525ca69df998",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Teclado",
+                    "action": "PulsaBotonDerecha",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8dfff5d1-aeb4-451d-be18-ac0d85753abc",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Teclado",
+                    "action": "PulsaBotonIzquierda",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Teclado",
+            "bindingGroup": "Teclado",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
