@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b5d4c07da841dd144bdf28adb111286b
+timeCreated: 1545014250
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 97186
+  packageName: POLYGON Fantasy Characters - Low Poly 3D Art by Synty
+  packageVersion: 1.4
+  assetPath: Assets/PolygonFantasyCharacters/Prefabs/FixedScaleCharacters/Character_Male_King_FixedScale.prefab
+  uploadId: 614580
