@@ -122,6 +122,10 @@ namespace StarterAssets
             }
         }
 
+        
+        [Header("SETTINGS DEL PROFE")]
+        public bool puedeSaltar = true;
+
 
         private void Awake()
         {
@@ -300,7 +304,8 @@ namespace StarterAssets
                 }
 
                 // Jump
-                if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+                // PROFE EDIT: Se añade variable si acaso puede saltar
+                if (_input.jump && _jumpTimeoutDelta <= 0.0f && puedeSaltar == true)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
@@ -388,5 +393,18 @@ namespace StarterAssets
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
+
+//----------------------------------------------------------------
+        #region PROFE EDIT
+        
+        /// <summary>
+        /// Resetea el estado jump del input
+        /// </summary>
+        public void ResetJumpState()
+        {
+            _input.jump = false;
+        }
+
+        #endregion
     }
 }

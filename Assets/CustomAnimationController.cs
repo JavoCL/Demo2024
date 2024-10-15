@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,8 +13,14 @@ public class CustomAnimationController : MonoBehaviour
     #region Parameters
     
     public InputActionReference inputMovimiento;
+    public InputActionReference inputAgacharse;
     public Vector2 vectorInputMovimiento;
     public Animator animatorPersonaje;
+
+    public ThirdPersonController thirdPersonController;
+
+    public bool agachado = false;
+    public bool puedeSaltarAgachado = false;
 
     #endregion
 	
@@ -22,7 +30,21 @@ public class CustomAnimationController : MonoBehaviour
 	
     void Start()
     {
-        
+        inputAgacharse.action.started += Agacharse;
+    }
+
+    private void Agacharse(InputAction.CallbackContext context)
+    {
+        if(thirdPersonController.Grounded == true)
+        {
+            agachado = !agachado;
+
+            if(puedeSaltarAgachado == false)
+            {
+                thirdPersonController.puedeSaltar = !agachado;
+                thirdPersonController.ResetJumpState();
+            }
+        }
     }
 
     void Update()
@@ -31,6 +53,8 @@ public class CustomAnimationController : MonoBehaviour
 
         animatorPersonaje.SetFloat("forward", vectorInputMovimiento.y);
         animatorPersonaje.SetFloat("right", vectorInputMovimiento.x);
+        
+        animatorPersonaje.SetBool("agachado", agachado);
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
