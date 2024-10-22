@@ -14,11 +14,16 @@ public class CustomAnimationController : MonoBehaviour
     
     public InputActionReference inputMovimiento;
     public InputActionReference inputAgacharse;
+    public InputActionReference inputAtaque;
+    public InputActionReference inputBloqueo;
+
+    public InputActionReference inputEnGuardia;
     public Vector2 vectorInputMovimiento;
     public Animator animatorPersonaje;
 
     public ThirdPersonController thirdPersonController;
 
+    public bool estaBloqueando = false;
     public bool agachado = false;
     public bool puedeSaltarAgachado = false;
 
@@ -31,6 +36,21 @@ public class CustomAnimationController : MonoBehaviour
     void Start()
     {
         inputAgacharse.action.started += Agacharse;
+        inputAtaque.action.started += Ataca;
+        inputBloqueo.action.started += Bloquea;
+        // inputAtaque.action.performed += NormalizaAtaque;
+    }
+
+    private void Bloquea(InputAction.CallbackContext context)
+    {
+        estaBloqueando = true;
+        animatorPersonaje.SetBool("bloqueando", true);
+    }
+
+    private void Ataca(InputAction.CallbackContext context)
+    {
+        if(estaBloqueando == false)
+            animatorPersonaje.SetTrigger("atacando");
     }
 
     private void Agacharse(InputAction.CallbackContext context)
@@ -55,6 +75,35 @@ public class CustomAnimationController : MonoBehaviour
         animatorPersonaje.SetFloat("right", vectorInputMovimiento.x);
         
         animatorPersonaje.SetBool("agachado", agachado);
+
+        if(inputBloqueo.action.IsPressed() == false)
+        {
+            animatorPersonaje.SetBool("bloqueando", false);
+            estaBloqueando = false;
+        }
+
+        if(inputEnGuardia.action.IsPressed() == true)
+        {
+            float layerWeight = animatorPersonaje.GetLayerWeight(1); 
+            if(layerWeight < 1f)
+            {
+                layerWeight += Time.deltaTime*3;
+                animatorPersonaje.SetLayerWeight(1, layerWeight);
+            }
+            else
+                animatorPersonaje.SetLayerWeight(1, 1f);
+        }
+        else
+        {
+            float layerWeight = animatorPersonaje.GetLayerWeight(1); 
+            if(layerWeight > 0)
+            {
+                layerWeight -= Time.deltaTime*6;
+                animatorPersonaje.SetLayerWeight(1, layerWeight);
+            }
+            else
+                animatorPersonaje.SetLayerWeight(1, 0f);
+        }
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)

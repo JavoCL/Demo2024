@@ -876,7 +876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6377636721361856155
 Transform:
   m_ObjectHideFlags: 0
@@ -1108,6 +1108,7 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
+  puedeSaltar: 1
 --- !u!114 &7084717281482584196
 MonoBehaviour:
   m_ObjectHideFlags: 0
