@@ -8,6 +8,8 @@ TagManager:
   - CinemachineTarget
   - obstaculoAlto
   - areaInteractiva
+  - GameOverArea
+  - Bola
   layers:
   - Default
   - TransparentFX
