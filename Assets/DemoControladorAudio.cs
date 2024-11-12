@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class DemoControladorAudio : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class DemoControladorAudio : MonoBehaviour
     [Range(0.0001f, 1f)]
     public float nivelMaster;
 
-    public float temp;
+    public Slider sliderMaster;
 
     #endregion
 	
@@ -29,13 +30,26 @@ public class DemoControladorAudio : MonoBehaviour
 
         // ColorLog("VOLUMEN DE MASTER: " + temp, Color.green);
 
-        GetVolumen();
-        ColorLog("VOLUMEN DE MASTER: " + temp, Color.green);
+        // GetVolumen();
+        // ColorLog("VOLUMEN DE MASTER: " + temp, Color.green);
+        // ColorLog("VARIABLE PLAYERPREFS MASTERVOLUMEN: " + PlayerPrefs.GetFloat("MasterVolumen"), Color.green);
+
+        if(PlayerPrefs.HasKey("MasterVolumen") == true)
+        {
+            nivelMaster = CargaVolumen("MasterVolumen");
+        }
+        else
+        {
+            EstableceVolumen("MasterVolumen", nivelMaster);
+        }
     }
 
     void Update()
     {
-        SetVolumen("MasterVolume", nivelMaster);
+        // SetVolumen("MasterVolume", nivelMaster);
+        // EstableceVolumen("MasterVolumen", nivelMaster);
+
+        //ColorLog("VARIABLE PLAYERPREFS MASTERVOLUMEN: " + PlayerPrefs.GetFloat("MasterVolumen"), Color.green);
     }
 	
     #endregion
@@ -44,15 +58,35 @@ public class DemoControladorAudio : MonoBehaviour
 
     #region Methods
 
+    public void EstableceVolumen(string paramExpuesto, float valorVolumen)
+    {
+        float volumen = Mathf.Log10(valorVolumen) * 20f;
+
+        /// Toma valor de 'volumen' en decibelios (entre -80 dB a 0 dB)
+        audioMixer.SetFloat(paramExpuesto, volumen);
+        PlayerPrefs.SetFloat(paramExpuesto, valorVolumen);
+        Log("VALOR VOLUMEN AL GUARDAR " + volumen);
+    }
+
+    public void EstableceMaster(float valorVolumen)
+    {
+        EstableceVolumen("MasterVolumen", valorVolumen);
+    }
+
+    public float CargaVolumen(string paramExpuesto)
+    {
+        float valorVolumen = PlayerPrefs.GetFloat(paramExpuesto);
+
+        if(sliderMaster != null)
+            sliderMaster.value = valorVolumen;
+
+        EstableceVolumen(paramExpuesto, valorVolumen);
+        return valorVolumen;
+    }
+
     public void SetVolumen(string paramExpuesto, float value)
     {
         audioMixer.SetFloat(paramExpuesto, Mathf.Log10(value)*20 );
-    }
-
-    public void GetVolumen()
-    {
-        audioMixer.GetFloat("MasterVolume", out temp);
-        nivelMaster = Mathf.Pow(10, temp*20);
     }
 
     #endregion
