@@ -293,6 +293,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PaletaIzquierda",
+                    "type": "Button",
+                    "id": "ad987137-28a8-402d-9082-f646c15e9022",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PaletaDerecha",
+                    "type": "Button",
+                    "id": "bbccef37-1b5a-4fef-8cf9-5874906044a2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -315,6 +333,28 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "InstanciaBola",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d46cd738-06b0-4f6c-9893-878ce9ffab2a",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "PaletaIzquierda",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b1b3b22e-49e1-4fcc-8b34-069dbad545ba",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "PaletaDerecha",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

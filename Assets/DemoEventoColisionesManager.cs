@@ -24,14 +24,21 @@ public class DemoEventoColisionesManager : MonoBehaviour
 
     #region Callbacks
 	
+    void OnCollisionEnter(Collision collision)
+    {
+        foreach(string t in tagFiltrados)
+        {
+            if(EsObjetoFiltrado(collision.gameObject, t))
+            {
+                objetosDetectados.Add(collision.gameObject);
+
+                events.onCollisionEnter.Invoke(collision);
+            }
+        }
+    }
+
     void OnTriggerEnter(Collider collider)
     {
-        // if(collider.gameObject.tag == tagFiltrado)
-        // {
-        //     objetoDetectado = collider.gameObject;
-        //     events.onTriggerEnter.Invoke(collider);
-        // }
-
         foreach(string t in tagFiltrados)
         {
             if(EsObjetoFiltrado(collider.gameObject, t))
@@ -140,9 +147,11 @@ public class DemoEventoColisionesManager : MonoBehaviour
     [System.Serializable]
     public struct Events
     {
+        public UnityEvent<Collision> onCollisionEnter;
         public UnityEvent<Collider> onTriggerEnter;
         public UnityEvent<Collider> onTriggerStay;
         public UnityEvent<Collider> onTriggerExit;
+
     }
 
     #endregion
