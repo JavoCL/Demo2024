@@ -952,6 +952,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1224602995}
     - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: juegaAlIniciar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: inputInstanciaBola
       value: 
       objectReference: {fileID: -2929080381606185538, guid: a925639e47a085a42a7b11117cd16db9, type: 3}
@@ -964,15 +968,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8351002503763128376, guid: a925639e47a085a42a7b11117cd16db9, type: 3}
     - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alFinalizar.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alFinalizar.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alFinalizar.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2054835400}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alFinalizar.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alFinalizar.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LlenaJson
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 797558729}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 797558729}
     - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
@@ -980,15 +1012,39 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alFinalizar.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DemoDataManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alFinalizar.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173964892805732078, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
+      propertyPath: events.alInstanciarBola.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4262858524844321434, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
@@ -1054,7 +1110,7 @@ PrefabInstance:
     - target: {fileID: 9133072792868926383, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 2054835398}
+      objectReference: {fileID: 1035543073}
     - target: {fileID: 9133072792868926383, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1077,7 +1133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9133072792868926383, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: RestaCreditos1
+      value: RestaBola1
       objectReference: {fileID: 0}
     - target: {fileID: 9133072792868926383, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1089,7 +1145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9133072792868926383, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: DemoLevelManager, Assembly-CSharp
+      value: ControladorPinball, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9133072792868926383, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
       propertyPath: events.onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1225,6 +1281,170 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591346069}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &692984278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692984279}
+  - component: {fileID: 692984284}
+  - component: {fileID: 692984283}
+  - component: {fileID: 692984282}
+  - component: {fileID: 692984281}
+  - component: {fileID: 692984280}
+  m_Layer: 0
+  m_Name: Puntuador (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &692984279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692984278}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.254, y: 0.164, z: 0.444}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 701952889}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &692984280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692984278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97af1610ee7d7414199257939d7cb1fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagFiltrados:
+  - Bola
+  objetosDetectados: []
+  events:
+    onCollisionEnter:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 692984281}
+          m_TargetAssemblyTypeName: DemoPuntuador, Assembly-CSharp
+          m_MethodName: ImpulsaBolaPuntuada
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: PUNTUO 10 PUNTOS MAS
+            m_BoolArgument: 0
+          m_CallState: 2
+    onTriggerEnter:
+      m_PersistentCalls:
+        m_Calls: []
+    onTriggerStay:
+      m_PersistentCalls:
+        m_Calls: []
+    onTriggerExit:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &692984281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692984278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194bbf0f2d28e96448ed32c1b7cbf797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntosOtorgados: 10
+  fuerza: 5
+  controladorPinball: {fileID: 1035543073}
+--- !u!135 &692984282
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692984278}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &692984283
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692984278}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 308c9df0b70a8fb4e8c1e0b1c22ea4e8, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &692984284
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692984278}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &701952888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,6 +1477,8 @@ Transform:
   - {fileID: 1450306063}
   - {fileID: 857377802}
   - {fileID: 1757162078}
+  - {fileID: 692984279}
+  - {fileID: 1222422949}
   m_Father: {fileID: 1035543075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &761895771 stripped
@@ -1494,6 +1716,67 @@ MonoBehaviour:
     onTriggerExit:
       m_PersistentCalls:
         m_Calls: []
+--- !u!1001 &819828096
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 91829091137363001, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_Name
+      value: BolaPinball
+      objectReference: {fileID: 0}
+    - target: {fileID: 91829091137363001, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033681151045660722, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.076
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033681151045660722, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.715
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033681151045660722, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033681151045660722, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033681151045660722, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033681151045660722, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033681151045660722, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033681151045660722, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033681151045660722, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033681151045660722, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 969c8dc277a34b24a88f403b8bcfc1e2, type: 3}
 --- !u!1 &857377801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,8 +1805,8 @@ Transform:
   m_GameObject: {fileID: 857377801}
   serializedVersion: 2
   m_LocalRotation: {x: -0.07547913, y: 0.86272997, z: -0.043577887, w: 0.4980973}
-  m_LocalPosition: {x: 0.3912, y: 0.1541, z: -0.1522}
-  m_LocalScale: {x: 0.513127, y: 0.21540001, z: 0.039210003}
+  m_LocalPosition: {x: 0.3829, y: 0.2478, z: -0.1665}
+  m_LocalScale: {x: 0.513127, y: 0.40566283, z: 0.039210003}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 701952889}
@@ -1853,7 +2136,7 @@ MonoBehaviour:
   minRango: 40
   maxRango: 120
   velocidadGiro: 1000
-  fuerza: 10
+  fuerza: 3
   inputPaleta: {fileID: 2374797876040086980, guid: a925639e47a085a42a7b11117cd16db9, type: 3}
 --- !u!1 &950103848
 GameObject:
@@ -2204,6 +2487,172 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1222422948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1222422949}
+  - component: {fileID: 1222422954}
+  - component: {fileID: 1222422953}
+  - component: {fileID: 1222422951}
+  - component: {fileID: 1222422950}
+  - component: {fileID: 1222422955}
+  m_Layer: 0
+  m_Name: Puntuador (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1222422949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222422948}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.071, y: 0.1, z: -0.192}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 701952889}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1222422950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222422948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97af1610ee7d7414199257939d7cb1fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagFiltrados:
+  - Bola
+  objetosDetectados: []
+  events:
+    onCollisionEnter:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1222422951}
+          m_TargetAssemblyTypeName: DemoPuntuador, Assembly-CSharp
+          m_MethodName: ImpulsaBolaPuntuada
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: PUNTUO 10 PUNTOS MAS
+            m_BoolArgument: 0
+          m_CallState: 2
+    onTriggerEnter:
+      m_PersistentCalls:
+        m_Calls: []
+    onTriggerStay:
+      m_PersistentCalls:
+        m_Calls: []
+    onTriggerExit:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1222422951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222422948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194bbf0f2d28e96448ed32c1b7cbf797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntosOtorgados: 15
+  fuerza: 5
+  controladorPinball: {fileID: 1035543073}
+--- !u!23 &1222422953
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222422948}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a6398a650f81f1b4dab3ed9df4b516e7, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1222422954
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222422948}
+  m_Mesh: {fileID: -1942721983537606058, guid: 8a91bd5676ee4224cbe64193aa77c1ff, type: 3}
+--- !u!136 &1222422955
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222422948}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.73
+  m_Height: 2.82
+  m_Direction: 1
+  m_Center: {x: -0.00000017881393, y: -0.000000059604645, z: 0}
 --- !u!1 &1224602993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,8 +3080,8 @@ Transform:
   m_GameObject: {fileID: 1450306062}
   serializedVersion: 2
   m_LocalRotation: {x: -0.043577895, y: 0.4980974, z: -0.07547913, w: 0.86272997}
-  m_LocalPosition: {x: -0.4526, y: 0.1439, z: -0.2463}
-  m_LocalScale: {x: 0.3176597, y: 0.21631697, z: 0.039210003}
+  m_LocalPosition: {x: -0.4442, y: 0.2391, z: -0.2608}
+  m_LocalScale: {x: 0.3176597, y: 0.40972596, z: 0.039210003}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 701952889}
@@ -2731,7 +3180,7 @@ MonoBehaviour:
   minRango: 40
   maxRango: 120
   velocidadGiro: 1000
-  fuerza: 10
+  fuerza: 3
   inputPaleta: {fileID: -8351002503763128376, guid: a925639e47a085a42a7b11117cd16db9, type: 3}
 --- !u!1 &1487570656
 GameObject:
@@ -3042,7 +3491,7 @@ Transform:
   m_GameObject: {fileID: 1757162077}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.109, y: 0.047, z: 0}
+  m_LocalPosition: {x: -0.259, y: 0.047, z: 0.229}
   m_LocalScale: {x: 0.275, y: 0.275, z: 0.275}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3100,9 +3549,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194bbf0f2d28e96448ed32c1b7cbf797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntosOtorgados: 25
-  fuerza: 5
-  levelManager: {fileID: 2054835398}
+  puntosOtorgados: 5
+  fuerza: 2.5
+  controladorPinball: {fileID: 1035543073}
 --- !u!135 &1757162081
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3330,7 +3779,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2054835399}
   - component: {fileID: 2054835400}
-  - component: {fileID: 2054835398}
   m_Layer: 0
   m_Name: Recursos
   m_TagString: Untagged
@@ -3338,44 +3786,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2054835398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054835397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d0464b2e7629c43b47508cb37ae1dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puntos: 0
-  puntoAGanar: 100
-  creditos: 0
-  juegaAlIniciar: 1
-  events:
-    alGanar:
-      m_PersistentCalls:
-        m_Calls: []
-    alPerder:
-      m_PersistentCalls:
-        m_Calls: []
-    alFinalizar:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2054835400}
-          m_TargetAssemblyTypeName: DemoDataManager, Assembly-CSharp
-          m_MethodName: LlenaJson
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!4 &2054835399
 Transform:
   m_ObjectHideFlags: 0
@@ -3403,7 +3813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42f7573a9d034543a4c8e5ab09166a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 2054835398}
+  controladorPinball: {fileID: 1035543073}
   dataPartida:
     puntos: 0
     creditos: 0
@@ -3412,7 +3822,12 @@ MonoBehaviour:
     puntos: 0
     creditos: 0
     fecha: 
+  dataCargadaArchivo:
+    puntos: 0
+    creditos: 0
+    fecha: 
   json: 
+  ruta: 
 --- !u!4 &2072431309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5741280397715231604, guid: 8398d5a0a4749f740b4d78ebe8c8e802, type: 3}
@@ -4042,3 +4457,4 @@ SceneRoots:
   - {fileID: 1437750402}
   - {fileID: 1183617584}
   - {fileID: 2054835399}
+  - {fileID: 819828096}

@@ -8,8 +8,24 @@ using UnityEngine.InputSystem;
 
 public class ControladorPinball : MonoBehaviour
 {
+
+    [Header("CONFIGURACION JUEGO")]
+
+    public bool juegaAlIniciar = false;
+    public bool juegoIniciado = false;
+
+    public int creditos = 0;
+    public int bolasPorCredito = 3;
+    public int bolasRestantes = 0;
+
+    public int puntos;
+    public int puntosAGanar = 100;
+
+    [Header("CONFIGURACION ANIMACIONES")]
     public Animator animatorBotonDerecha;
     public Animator animatorBotonIzquierda;
+
+    [Header("CONFIGURACION INPUTS")]
     public InputActionReference inputPivoteDerecha;
     public InputActionReference inputPivoteIzquierda;
 
@@ -17,17 +33,27 @@ public class ControladorPinball : MonoBehaviour
 
     // Start is called before the first frame update
 
+    [Header("CONFIGURACION BOLA Y PLAYER")]
+
     public GameObject prefabBola;
     public GameObject currentBola;
     public Transform bolaSpawn;
     public Transform playerPosition;
     public Camera pinballCamera;
 
+    [Header("CONFIGURACION EVENTOS")]
+
     public Events events;
 
     void Start()
     {
-        
+        if(juegaAlIniciar == true)
+        {
+            creditos = 1;
+            IniciaJuego();
+
+            EsperaPuntosMaximos();
+        }
     }
 
     // Update is called once per frame
@@ -62,6 +88,52 @@ public class ControladorPinball : MonoBehaviour
         inputInstanciaBola.action.started -= InstanciaNuevaBola;
     }
 
+    ///////////////////////////////////////////
+
+    #region Methods
+
+    public void IncrementaPuntos(int nuevosPuntos)
+    {
+        puntos += nuevosPuntos;
+    }
+
+    public void RestaCreditos(int aRestar)
+    {
+        if(creditos > 0)
+            creditos -= aRestar;
+    }
+
+    public void RestaBola(int aRestar)
+    {
+        if(bolasRestantes > 0)
+            bolasRestantes -= aRestar;
+        
+        if(bolasRestantes == 0)
+            RestaCreditos1();
+    }
+
+    public void RestaBola1()
+    {
+        RestaBola(1);
+    }
+
+    public void RestaCreditos1()
+    {
+        RestaCreditos(1);
+    }
+
+    public void EsperaPuntosMaximos()
+    {
+        StartCoroutine(_EsperaPuntosMaximos());
+    }
+
+    public void IniciaJuego()
+    {
+        juegoIniciado = true;
+
+        bolasRestantes = bolasPorCredito * creditos;
+    }
+
     private void PulsaBotonDerecha(InputAction.CallbackContext context)
     {
         animatorBotonDerecha.SetTrigger("pulsar");
@@ -84,11 +156,6 @@ public class ControladorPinball : MonoBehaviour
     {
         GameObject.Destroy(currentBola);
         currentBola = null;
-
-        // alPerder.Play();
-        // alPerder.Stop();
-        // alPerder.clip = // EL ARCHIVO .MP3 O .WAV
-        // alPerder.clip.length 
     }
 
     public void PosicionaPlayer(DemoEventoColisionesManager colisionesManager)
@@ -138,9 +205,57 @@ public class ControladorPinball : MonoBehaviour
         player.transform.parent = null;
     }
 
+    #endregion
+
+    ///////////////////////////////////////////
+	
+    #region Coroutines
+	
+    IEnumerator _CentraPlayer(PinballPlayer player)
+    {
+        player.transform.parent = playerPosition;
+        // player.GetComponent<>
+
+        while(player.transform.localPosition != Vector3.zero)
+        {
+            Vector3.Lerp(Vector3.zero, player.transform.localPosition, Time.deltaTime);
+            
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        player.transform.parent = null;
+    }    
+	
+    IEnumerator _EsperaPuntosMaximos()
+    {
+        Debug.Log("INICIO EL JUEGO. ESPERANDO PUNTOS MAXIMOS.");
+        yield return new WaitUntil(()=> puntos >= puntosAGanar || creditos == 0);
+        if(puntos >= puntosAGanar)
+        {
+            Debug.Log("GANE");
+            events.alGanar.Invoke();
+        }
+        else
+        {
+            Debug.Log("PERDI");
+            events.alPerder.Invoke();
+        }
+
+        events.alFinalizar.Invoke();
+            
+    }
+
+    #endregion
+
+    ///////////////////////////////////////////
+
     [System.Serializable]
     public struct Events
     {
+        public UnityEvent alIniciar;
+        public UnityEvent alGanar;
+        public UnityEvent alPerder;
+        public UnityEvent alFinalizar;
         public UnityEvent alInstanciarBola;
     }
 }

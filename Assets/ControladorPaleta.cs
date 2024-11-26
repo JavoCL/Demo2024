@@ -65,8 +65,20 @@ public class ControladorPaleta : MonoBehaviour
         {
             Rigidbody rbBola = collision.gameObject.GetComponent<Rigidbody>();
 
-            rbBola.AddForce(Vector3.forward * fuerza, ForceMode.Impulse);
+            rbBola.AddForce(VectorRebote(collision).normalized * fuerza, ForceMode.Impulse);
         }
+    }
+
+    public Vector3 VectorRebote(Collision collision)
+    {
+        // Vector de movimiento inicial
+        Vector3 vectorInicial = collision.gameObject.GetComponent<Rigidbody>().velocity;
+        // Vector normal de la superficie de colision
+        Vector3 vectorNormal = collision.contacts[0].normal;
+        // Refleja el vector inicial en el eje marcado por el vectorNormal
+        Vector3 vectorReflejo = Vector3.Reflect(vectorInicial,vectorNormal);
+
+        return vectorReflejo;
     }
     #endregion
 

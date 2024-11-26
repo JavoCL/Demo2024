@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using NUnit.Framework;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 public class DemoDataManager : MonoBehaviour
@@ -10,12 +12,14 @@ public class DemoDataManager : MonoBehaviour
     
     #region Parameters
 
-    public DemoLevelManager levelManager;
+    public ControladorPinball controladorPinball;
 
     public DataPartida dataPartida;
     public DataPartida dataCargada;
+    public DataPartida dataCargadaArchivo;
 
     public string json;
+    public string ruta;
     
     #endregion
 	
@@ -25,12 +29,20 @@ public class DemoDataManager : MonoBehaviour
 	
     void Start()
     {
-        
+        ruta = Application.streamingAssetsPath + "/pinballData.json";
+
+        dataCargadaArchivo = CargaArchivoJson();
+
+        if(controladorPinball.juegaAlIniciar == true)
+            CargaDatosPrevios();
+
     }
 
     void Update()
     {
-        
+        // Log("DATA PATH: " + Application.dataPath);
+        // Log("PERSISTENT DATA PATH: " + Application.persistentDataPath);
+        // Log("STREAMING ASSET PATH: " + Application.streamingAssetsPath);
     }
 	
     #endregion
@@ -41,9 +53,16 @@ public class DemoDataManager : MonoBehaviour
 
     public void LlenaData()
     {
-        dataPartida.creditos = levelManager.creditos;
-        dataPartida.puntos = levelManager.puntos;
+        dataPartida.creditos = controladorPinball.creditos;
+        dataPartida.puntos = controladorPinball.puntos;
         dataPartida.fecha = DateTime.Now.ToString();
+    }
+
+    // Si hay un archivo guardado, se comienza desde ahi
+    public void CargaDatosPrevios()
+    {
+        controladorPinball.puntos = dataCargadaArchivo.puntos;
+        controladorPinball.creditos = dataCargadaArchivo.creditos;
     }
 
     public void LlenaJson()
@@ -55,11 +74,35 @@ public class DemoDataManager : MonoBehaviour
         Log("JSON GENERADO: " + json);
 
         LeeJson();
+        GuardaArchivoJson();
     }
 
     public void LeeJson()
     {
         dataCargada = JsonUtility.FromJson<DataPartida>(json);
+    }
+
+    public void GuardaArchivoJson()
+    {
+        File.WriteAllText(ruta, json);
+        Log("DATOS GUARDADOS EN: " + ruta);
+    }
+
+    public DataPartida CargaArchivoJson()
+    {
+        DataPartida dataArchivo = new DataPartida();
+
+        if(File.Exists(ruta) == true)
+        {
+            Log("ARCHIVO EXISTE");
+            string jsonAux = File.ReadAllText(ruta);
+
+            dataArchivo = JsonUtility.FromJson<DataPartida>(jsonAux);
+        }
+        else
+            Log("ARCHIVO NO ENCONTRADO EN " + ruta);
+
+        return dataArchivo;
     }
 
     #endregion

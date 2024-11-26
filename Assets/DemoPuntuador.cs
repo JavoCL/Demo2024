@@ -12,7 +12,7 @@ public class DemoPuntuador : MonoBehaviour
     public int puntosOtorgados = 10;
     public float fuerza = 5f;
 
-    public DemoLevelManager levelManager;
+    public ControladorPinball controladorPinball;
 
     #endregion
 	
@@ -40,10 +40,23 @@ public class DemoPuntuador : MonoBehaviour
     {
         Rigidbody rbBola = collision.gameObject.GetComponent<Rigidbody>();
 
-        rbBola.AddForce(-collision.transform.forward * fuerza, ForceMode.Impulse);
+        rbBola.AddForce(VectorRebote(collision).normalized * fuerza, ForceMode.Impulse);
+        // rbBola.AddForce(-collision.transform.forward * fuerza, ForceMode.Impulse);
 
-        levelManager.IncrementaPuntos(puntosOtorgados);
-    } 
+        controladorPinball.IncrementaPuntos(puntosOtorgados);
+    }
+
+    public Vector3 VectorRebote(Collision collision)
+    {
+        // Vector de movimiento inicial
+        Vector3 vectorInicial = collision.gameObject.GetComponent<Rigidbody>().velocity;
+        // Vector normal de la superficie de colision
+        Vector3 vectorNormal = collision.contacts[0].normal;
+        // Refleja el vector inicial en el eje marcado por el vectorNormal
+        Vector3 vectorReflejo = Vector3.Reflect(vectorInicial,vectorNormal);
+
+        return vectorReflejo;
+    }
 
     #endregion
 
