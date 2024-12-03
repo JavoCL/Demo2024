@@ -1,20 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class DemoRaycast : MonoBehaviour
+public class DemoVision : MonoBehaviour
 {
     ///////////////////////////////////////////
     
     #region Parameters
-
-    public Transform origin;
-    public float distanciaVista = 10f;
-    public string tagObjetoTarget;
-
-    public UnityEvent<Transform> alChocarRaycast;
-    public UnityEvent alNoChocarRaycast;
     
     #endregion
 	
@@ -27,29 +19,9 @@ public class DemoRaycast : MonoBehaviour
         
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        Vector3 direccionRaycast = origin.forward;
-        Vector3 direccionLinea = origin.forward*distanciaVista + origin.position;
-
-        RaycastHit hit;
-
-        Debug.DrawLine(origin.position, direccionLinea, Color.red);
-
-        if(Physics.Raycast(origin.position, direccionRaycast, out hit, distanciaVista))
-        {
-            Log("ESTOY MIRANDO " + hit.collider.gameObject.name);
-            
-            if(hit.collider.gameObject.tag == tagObjetoTarget)
-                alChocarRaycast.Invoke(hit.collider.gameObject.transform);
-            else
-                alNoChocarRaycast.Invoke();
-        }
-        else
-        {
-            Log("NO ESTOY MIRANDO NADA");
-            alNoChocarRaycast.Invoke();
-        }
+        
     }
 	
     #endregion

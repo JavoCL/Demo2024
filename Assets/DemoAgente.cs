@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class DemoAgente : MonoBehaviour
 {
@@ -9,8 +11,15 @@ public class DemoAgente : MonoBehaviour
     
     #region Parameters
 
-    public Transform player;
+    public Transform objetivoDetectado;
     public NavMeshAgent agent;
+    public Vector3 ultimaUbicacion;
+
+    public Transform currentPatrulla;
+    public List<Transform> listaPatrullaje;
+
+    public UnityEvent alDetectarObjetivo;
+    public UnityEvent alNoDetectarObjetivo;
     
     #endregion
 	
@@ -21,11 +30,21 @@ public class DemoAgente : MonoBehaviour
     void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
+        currentPatrulla = listaPatrullaje[Random.Range(0, listaPatrullaje.Count)];
+
     }
+
+    public float distancia = 0f;
 
     void Update()
     {
-        agent.destination = player.position;
+        float distanciaPatrulla = Vector3.Distance(this.transform.position, currentPatrulla.position);
+
+        if(distanciaPatrulla > 0.1f)
+            agent.destination = currentPatrulla.position;
+        else
+            currentPatrulla = listaPatrullaje[Random.Range(0,listaPatrullaje.Count)];
+
     }
 	
     #endregion
@@ -38,6 +57,19 @@ public class DemoAgente : MonoBehaviour
     {
         this.gameObject.GetComponent<Animator>().SetBool("corriendo", estado);
     }
+
+    public void SetObjetivo(Transform nuevoObjetivo)
+    {
+        objetivoDetectado = nuevoObjetivo;
+        ultimaUbicacion = objetivoDetectado.position;
+    }
+
+    public void ResetObjetivo()
+    {
+        objetivoDetectado = null;
+        ultimaUbicacion = this.transform.position;
+    }
+
     #endregion
 
     ///////////////////////////////////////////
