@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,7 @@ public class DemoAgente : MonoBehaviour
     void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
-        currentPatrulla = listaPatrullaje[Random.Range(0, listaPatrullaje.Count)];
+        currentPatrulla = listaPatrullaje[UnityEngine.Random.Range(0, listaPatrullaje.Count)];
 
     }
 
@@ -41,9 +42,15 @@ public class DemoAgente : MonoBehaviour
         float distanciaPatrulla = Vector3.Distance(this.transform.position, currentPatrulla.position);
 
         if(distanciaPatrulla > 0.1f)
+        {
             agent.destination = currentPatrulla.position;
+            SetAnimacionCorrer(true);
+        }
         else
-            currentPatrulla = listaPatrullaje[Random.Range(0,listaPatrullaje.Count)];
+        {
+            SetAnimacionCorrer(false);
+            currentPatrulla = listaPatrullaje[UnityEngine.Random.Range(0,listaPatrullaje.Count)];
+        }
 
     }
 	
@@ -62,6 +69,11 @@ public class DemoAgente : MonoBehaviour
     {
         objetivoDetectado = nuevoObjetivo;
         ultimaUbicacion = objetivoDetectado.position;
+    }
+
+    public void SetAgenteDestination(Transform destino)
+    {
+        agent.destination = destino.position;
     }
 
     public void ResetObjetivo()
